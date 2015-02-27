@@ -1,0 +1,8 @@
+.articles-list
+  - articles.each_with_index do |article, i|
+    figure class= size(i)
+      .cover style="background-image: url('#{article.image.url(:resized)}')"
+      figcaption
+        time #{time_ago_in_words article.updated_at} назад
+        h2 = article
+      = link_to '', article_path(article), class: 'read-more'

@@ -1,0 +1,27 @@
+section.block.order
+  h1 = @order
+  table.order-details
+    tr
+      td: h4 = @order.product
+      td = @order.product.decorate.price
+
+    - @order.options.each do |option|
+      tr
+        td = option
+        td = option.decorate.price
+
+    tr
+      td Колличество
+      td = @order.quantity
+    tr
+      td.price colspan=2 Итого: #{@order.decorate.price}
+
+
+  = simple_form_for @order do |f|
+    = f.hidden_field :status, value: 'Оформлен'
+    = f.simple_fields_for :customer do |c|
+      = c.input :name
+      = c.input :phone
+      = c.input :email
+    = f.input :comment, as: :text, input_html: {rows: 5}
+    = f.button :submit, 'Оформить заказ'

@@ -1,0 +1,84 @@
+section.index{
+  & > header{
+    height: 450px;
+    background: $green image_url('index_header.jpg') center center no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    h2{
+      font-size: 26px;
+      font-weight: 300;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    h1{
+      font-size: 56px;
+      font-weight: 800;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    p{
+      margin: 10px 0 40px;
+    }
+    .centered{
+      max-width: 680px;
+    }
+  }
+
+  section.block{
+    padding: 40px $global-padding;
+  }
+  section.products-slider{
+    padding: 0 $global-padding;
+    margin: 40px 0 30px;
+    .slider{
+      overflow: hidden;
+      height: 282px;
+    }
+    .product-preview{
+      float: left;
+      margin-right: 10px;
+      .show-more{
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 1;
+      }
+    }
+  }
+  section.articles{
+    .show-more{
+      text-align: center;
+      padding-top: 20px;
+    }
+  }
+  section.benefits{
+    background: $green;
+    color: #fff;
+    .benefits-list{
+      display: flex;
+      justify-content: space-around;
+      padding-top: 20px;
+      figure{
+        flex-basis: 230px;
+        text-align: center;
+        figcaption{
+          margin-top: 20px;
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+
+  section.reviews{
+    .show-more{
+      text-align: center;
+    }
+  }
+}

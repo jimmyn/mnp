@@ -1,0 +1,8 @@
+- title 'Отзывы покупателей'
+
+section.block.dark.reviews@@paginated data-path=reviews_path
+  h1 Отзывы покупателей
+  .reviews-list
+    = render @reviews
+  - unless @reviews.last_page?
+    .show-more: a.btn.btn-outline.btn-green@load_more href="#" Показать еще

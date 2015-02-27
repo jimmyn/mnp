@@ -1,0 +1,7 @@
+- title 'Новости'
+
+section.block.articles@@paginated data-path=articles_path
+  h1 Новости
+  = render 'articles/articles_list', articles: @articles
+  - unless @articles.last_page?
+    .show-more: a.btn.btn-outline.btn-green@load_more href="#" Показать еще

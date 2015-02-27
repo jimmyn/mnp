@@ -1,0 +1,12 @@
+@import "active_admin/mixins";
+@import "active_admin/base";
+@import "active_admin/extra";
+@import "activeadmin_settings";
+@import "active_admin_theme";
+
+.ms-container{
+  width: 850px;
+  .ms-selectable{
+    width: 48%;
+  }
+}

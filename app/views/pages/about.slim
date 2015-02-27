@@ -1,0 +1,10 @@
+- title 'О компании'
+
+section.page.about
+  header
+    .text
+      h1 О компании
+      = simple_format settings_value("Кратко о компании")
+  section.block
+    article
+      = settings_value("Текст о компании")

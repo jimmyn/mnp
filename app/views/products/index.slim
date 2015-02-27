@@ -1,0 +1,28 @@
+- title 'Каталог продукции'
+
+section.products@@paginated data-path=products_path
+  header
+    .categories
+      h1 Каталог продукции
+      h1 Обзор
+      .categories-list
+        = active_link_to products_path, active: params[:category].nil? do
+          .counter = Product.count
+          |Все товары
+        - @categories.each do |category|
+          = active_link_to params.merge(category: category.id), active: params[:category].to_i == category.id do
+            .counter = category.products.count
+            = category
+    .price-range@@price_range
+      .range-slider
+        span.label Фильтр по цене
+        div@range data={min: Product.price_range[:min], max: Product.price_range[:max], from: params[:min], to: params[:max]}
+        button@submit class='btn btn-small' Применить
+
+  section.products-list
+    = render @products
+
+  - unless @products.last_page?
+    .show-more: a.btn.btn-outline.btn-green@load_more href="#" Показать еще
+
+

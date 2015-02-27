@@ -1,0 +1,284 @@
+// Variables
+$green: #88b27c;
+$yellow: #f3f3c4;
+$beige: #ececdd;
+$gray: #656565;
+$gray-light: #686868;
+$gray-lighter: #a8a8a8;
+$text-color: #272727;
+$text-muted: $gray-lighter;
+$global-padding: 40px;
+
+
+@import "normalize-rails";
+@import 'ionicons';
+@import "ion.rangeSlider";
+@import "ion.rangeSlider.skinFlat";
+@import "gritter";
+@import "slider";
+@import "forms";
+@import "pagination";
+@import "pages/*";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700&subset=latin,cyrillic);
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #cfcec9;
+  color: $text-color;
+  .wrapper {
+    min-height: 100%;
+    margin: 0 auto -50px;
+    position: relative;
+    &:after{
+      content: "";
+      display: block;
+      height: 50px;
+    }
+  }
+}
+
+
+figure{
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $green;
+  outline: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0 0 30px;
+}
+
+button {
+  outline: none;
+}
+
+hr{
+  border: 1px solid $text-muted;
+  border-bottom: none;
+}
+
+section.block{
+  overflow: hidden;
+  padding: 25px $global-padding;
+  &.dark{
+    color: $text-color + 50;
+  }
+}
+
+.price{
+  font-size: 20px;
+  font-weight: 600;
+  small{
+    color: $gray-light;
+    font-weight: 400;
+    font-size: .6em;
+    text-transform: uppercase;
+  }
+}
+
+main {
+  width: 1100px;
+  margin: 0 auto 110px;
+  background: $beige;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+  min-height: 800px;
+  & > header {
+    padding: $global-padding;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .phone-link {
+      font-size: 24px;
+    }
+    .logo{
+      margin-top: 3px;
+    }
+  }
+  & > nav {
+    background: $yellow;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
+    a {
+      line-height: 35px;
+      text-transform: uppercase;
+      color: $text-color;
+      margin: 0 15px;
+      display: block;
+      position: relative;
+      transition: all .3s;
+      &:hover, &.active {
+        color: $gray-light;
+        text-decoration: none;
+        &:after {
+          width: 100%;
+        }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: $gray-lighter;
+        width: 0;
+        height: 2px;
+        transition: width .3s;
+      }
+    }
+  }
+}
+
+.search-form {
+  display: block;
+  position: relative;
+  flex-basis: 375px;
+  input[type="search"] {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 1px solid $gray-lighter;
+    background: #fff;
+    outline: none;
+    line-height: 30px;
+    height: 32px;
+    padding: 0 35px 0 10px;
+    margin: 0;
+    font-size: 14px;
+  }
+  button {
+    -webkit-appearance: none;
+    border: 0;
+    color: $green;
+    background: none;
+    font-size: 22px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    padding: 0;
+    line-height: 30px;
+    cursor: pointer;
+  }
+}
+
+.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  line-height: 40px;
+  height: 42px;
+  padding: 0 20px;
+  background: $green;
+  border: 1px solid $green - 20;
+  transition: all .3s;
+  font-size: 12px;
+  color: #fff;
+  &:hover {
+    background: $green - 20;
+    text-decoration: none;
+  }
+  &.btn-small{
+    line-height: 30px;
+    height: 32px;
+    padding: 0 15px;
+  }
+  &.btn-outline{
+    background: none;
+    &.btn-white{
+      border-color: #fff;
+      color: #fff;
+      &:hover{
+        background: #fff;
+        color: $text-color;
+      }
+    }
+    &.btn-green{
+      border-color: $green;
+      color: $green;
+      &:hover{
+        background: $green;
+        color: #fff;
+      }
+    }
+  }
+}
+
+a[href^="tel:"] {
+  color: $text-color;
+  text-decoration: none;
+  i {
+    font-style: normal;
+    color: $text-muted;
+  }
+}
+
+a[href^="mailto:"] {
+  color: $text-color;
+}
+
+footer{
+  position: relative;
+  background: #414141;
+  .content{
+    height: 50px;
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $global-padding;
+  }
+  p{
+    margin: 0;
+    color: $beige;
+    font-size: 14px;
+  }
+  a{
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+}
+
+.show-more{
+  text-align: center;
+  .btn{
+    min-width: 190px;
+  }
+}
+
+#gritter-notice-wrapper{
+  width: 401px;
+}
+
+.gritter-with-image {
+  width:320px;
+  float:right;
+}
+
+.gritter-item{
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}

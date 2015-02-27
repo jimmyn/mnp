@@ -1,0 +1,14 @@
+- title @article
+
+section.article
+  header
+    .cover style="background-image: url('#{@article.image.url(:large)}')"
+    .title
+      time #{time_ago_in_words @article.updated_at} назад
+      h2 = @article
+
+  section.block
+    article
+      = @article.body.html_safe
+      .share-links
+        div#ya_share1

@@ -1,0 +1,78 @@
+ru:
+  default: &default
+    created_at: Дата создания
+    updated_at: Дата обновления
+    price: Цена
+    id: №
+    product: Товар
+    option: Доп. услуга
+    customer: Клиент
+    status: Статус
+    quantity: Количество
+    description: Описание
+    category_id: Категория
+    category: Категория
+    properties: Характеристики
+    name: Название
+    comment: Комментарий
+    phone: Телефон
+    email: E-mail
+    title: Название
+    body: Текст
+    position: Должность
+    company_name: Название компании
+    company_url: Сайт компании
+    options: Доп. услуги
+    image: Фото
+    photo: Фото
+    orders: Заказы
+    index: Приоритет
+    featured: Популярный
+    current_sign_in_at: Дата последнего входа
+    current_sign_in_at: Дата последнего входа
+
+  number:
+    currency:
+      format:
+        format: "%n <small>%u</small>"
+
+  helpers:
+    submit:
+      contact:
+        create: "Отправить сообщение"
+
+  activerecord:
+    models:
+      article: Новости
+      post: Новости
+      category: Категории
+      customer: Клиенты
+      option: Доп. услуги
+      order: Заказы
+      product: Товары
+      review: Отзывы
+      product_image: Фото продукта
+      admin_user: Администраторы
+    attributes:
+      article:
+        <<: *default
+      post:
+        <<: *default
+      category:
+        <<: *default
+      customer:
+        <<: *default
+        name: Имя
+      option:
+        <<: *default
+      order:
+        <<: *default
+      product:
+        <<: *default
+      review:
+        <<: *default
+      product_image:
+        <<: *default
+      admin_user:
+        <<: *default
+

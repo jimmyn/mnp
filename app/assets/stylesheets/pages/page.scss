@@ -1,0 +1,38 @@
+section.page {
+  background: #fff;
+  min-height: 800px;
+  & > header {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    overflow: hidden;
+    background: $text-color;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    .text{
+      flex-basis: 800px;
+      text-align: center;
+    }
+    h1{
+      font-weight: 800;
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+  article{
+    max-width: 800px;
+    margin: auto;
+  }
+}
+
+section.delivery header{
+  background-image: image_url('delivery.jpg');
+}
+
+section.about header{
+  background-image: image_url('about.jpg');
+}

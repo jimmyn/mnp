@@ -1,0 +1,9 @@
+ru:
+  mail_form:
+    attributes:
+      contact:
+        name: Имя
+        email: Email
+        phone: Телефон
+        subject: Тема
+        message: Сообщение

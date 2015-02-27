@@ -1,0 +1,15 @@
+article
+  = image_tag review.photo.url(:thumb), size: '80x80', class: 'avatar'
+  .content
+    = simple_format review.body
+    h4 = review.name
+    p.company-info
+      = review.position
+      - if review.company_url.present?
+        - if review.position.present?
+          span<>&#8212;
+        = ext_link_to review.company_name || review.company_url, review.company_url
+      - elsif review.company_name.present?
+        - if review.position.present?
+          span<>&#8212;
+        = review.company_name

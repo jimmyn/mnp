@@ -1,0 +1,5 @@
+$('.articles-list').append("<%= j render 'articles/articles_list', articles: @articles %>");
+
+<% if @articles.last_page? %>
+  $('.show-more').remove();
+<% end %>

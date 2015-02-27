@@ -1,0 +1,19 @@
+header
+  = link_to root_path, class: 'logo'
+    = svg_image_tag 'logo.svg', size: '250x55'
+  = form_tag products_path, method: :get, class: 'search-form'
+    = search_field_tag :query, params[:query], placeholder: "Найти что-нибудь..."
+    = button_tag(type: 'submit', name: nil) do
+      i.ion-ios-search-strong
+  = phone_link_to settings_value('Телефон'), class: 'phone-link'
+  = link_to 'Ваша заявка', contacts_path, class: 'btn btn-small'
+nav
+  = active_link_to 'продукция', products_path
+  = active_link_to 'новости', articles_path
+  = active_link_to 'о компании', about_path
+  = active_link_to 'доставка', delivery_path
+  = active_link_to 'отзывы', reviews_path
+  = active_link_to 'контакты', contacts_path
+
+
+

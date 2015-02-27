@@ -1,0 +1,8 @@
+figure.product-preview
+  = link_to product_path(product) do
+    = image_tag product.cover.url(:thumb)
+  figcaption
+    h5 = truncate product.name, length: 50, separator: ' '
+    p = truncate product.description, length: 80, separator: ' '
+    .price = product.decorate.price
+    = link_to 'Приобрести', product_path(product), class: 'btn btn-small'

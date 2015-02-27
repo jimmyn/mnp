@@ -1,0 +1,31 @@
+- title 'Контакты'
+
+- content_for :scripts do
+  = javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true&language=ru"
+  = javascript_include_tag 'gmaps'
+
+section.contacts
+  div@@map
+    #map-frame
+  .content
+    = simple_form_for @contact || Contact.new do |f|
+      .row
+        = f.input :name
+        = f.input :email
+      = f.input :subject
+      = f.input :message, as: :text, input_html: {rows: 8}, placeholder: (placeholder if defined? placeholder)
+      = f.button :submit
+    ul.contact-info
+      li
+        span.label> Телефон:
+        = phone_link_to settings_value('Телефон')
+      li
+        span.label> Email:
+        = mail_to settings_value('Email')
+      li
+        span.label> Адрес:
+        = settings_value('Адрес')
+      li
+        span.label> Мы работаем:
+        = settings_value('Часы работы')
+

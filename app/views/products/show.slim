@@ -1,0 +1,52 @@
+- title @product
+
+section.block.dark.product
+  .product-image-slider@@product_image_slider
+    ul.slider@slider
+      -@product.product_images.each do |product_image|
+        li =image_tag product_image.image.url(:medium), size: "419x285"
+    -unless @product.product_images.count == 1
+      .pager@pager
+        -@product.product_images.each_with_index do |product_image, i|
+          a data-slide-index="#{i}" href=""
+            =image_tag product_image.image.url(:thumb), size: "137x91"
+  .description@@product_options
+    h2 = @product
+    hr
+    - if @product.description.present?
+      = simple_format @product.description
+      hr
+    - if @product.properties.present?
+      table.properties
+        -@product.properties.split("\n").each do |option|
+          tr
+            -option.split(":").each do |part|
+              td =part
+      hr
+    - if @product.options.present?
+      h3 Дополнительные услуги:
+      table.options
+        - @product.options.each do |option|
+          tr
+            td: label for="option_#{option.id}"= option
+            td = option.decorate.price
+            td: input@option type="checkbox" value=option.id id="option_#{option.id}" data-price=option.price
+      hr
+
+    .summary
+      .quantity
+        label> for='quantity' Количество:
+        input#quantity@quantity type='number' value=1
+      .price
+        label> Итоговая цена:
+        span@total_price = @product.price
+        small< руб.
+    hr
+
+    = simple_form_for Order.new do |f|
+      = f.hidden_field :product_id, value: @product.id
+      = f.hidden_field :option_ids, value: "", data: {role: 'options'}
+      = f.hidden_field :quantity, value: 1, data: {role: 'quantity'}
+      = f.hidden_field :price, value: @product.price, data: {role: 'price_input'}
+      = f.button :submit, 'Оформить заказ'
+

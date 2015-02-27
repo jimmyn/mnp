@@ -1,0 +1,5 @@
+$('.products-list').append("<%=j render @products %>");
+
+<% if @products.last_page? %>
+  $('.show-more').remove();
+<% end %>

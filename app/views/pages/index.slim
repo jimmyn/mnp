@@ -1,0 +1,47 @@
+section.index
+  header
+    .centered
+      h2 наша продукция
+      h1 Экологична
+      = simple_format settings_value("Текст на главной")
+      = link_to 'Узнать подробнее', about_path, class: 'btn btn-outline btn-white'
+
+  section.products-slider
+    div.slider@@products_slider
+      - @products.each do |product|
+        figure.product-preview
+          = image_tag product.cover.url(:thumb), size: '248x196'
+          figcaption
+            h5 = truncate product.name, length: 25, separator: ' '
+            .price = product.decorate.price
+          = link_to '', product_path(product), class: 'show-more'
+
+  section.block.articles
+    h1 Новости
+    = render 'articles/articles_list', articles: Article.limit(4)
+    .show-more
+      = link_to 'Показать все новости', articles_path, class: 'btn'
+
+  section.block.benefits
+    h1 наши преимущества
+    .benefits-list
+      figure
+        = svg_image_tag 'benefit1.svg', size: '125x125'
+        figcaption Лучшие решения для бизнеса и дома
+      figure
+        = svg_image_tag 'benefit2.svg', size: '125x125'
+        figcaption Тщательный контроль на всех этапах
+      figure
+        = svg_image_tag 'benefit3.svg', size: '125x125'
+        figcaption Бесплатный выезд менеджера
+
+  section.block.dark.reviews
+    h1 Отзывы покупателей
+    .reviews-list
+      = render Review.limit(4)
+    .show-more
+      = link_to 'Показать все все отзывы', reviews_path, class: 'btn btn-outline btn-green'
+
+
+
+

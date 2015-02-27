@@ -1,0 +1,17 @@
+ru:
+  simple_form:
+     placeholders:
+        contact:
+          name: Имя
+          email: Email
+          phone: Телефон
+          subject: Тема
+          message: Ваше сообщение
+
+        customer:
+          name: Имя
+          email: Email
+          phone: Телефон
+
+        order:
+          comment: Комментарий к заказу

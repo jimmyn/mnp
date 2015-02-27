@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta content="width=1100" name="viewport" /
+    = stylesheet_link_tag    "application", media: 'all'
+    = yield :scripts
+    = javascript_include_tag "application"
+    = favicon_link_tag 'favicon.png'
+    = csrf_meta_tags
+    = metamagic site: settings_value("Название сайта"),
+                description: settings_value("Описание сайта"),
+                keywords: global_keywords + [settings_value("Ключевые слова")],
+                title: [:title, :site], separator: " – "
+
+  body
+    .wrapper
+      main
+        = render 'layouts/header'
+        = yield
+    footer
+      .content
+        p &copy; Компания «Монпарнас РСК», 2014
+        p
+          |Дизайн и разработка
+          = link_to "http://4isten.co/",  target:"_blank" do
+            = svg_image_tag '4istenco.svg', size: '80x14'
+
+    = render 'layouts/metrika'
+    = gflash
+    script type="text/javascript" src="http://consultsystems.ru/script/5400/" charset="utf-8"

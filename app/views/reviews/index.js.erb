@@ -1,0 +1,5 @@
+$('.reviews-list').append("<%= j render @reviews %>");
+
+<% if @reviews.last_page? %>
+  $('.show-more').remove();
+<% end %>

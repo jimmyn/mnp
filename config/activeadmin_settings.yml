@@ -1,0 +1,69 @@
+# ================================================================================
+#   activeadmin_settings.yml
+#   ---configuration file v1.0---
+# ================================================================================
+#
+# This file is used to store a list of activeadmin settings. Settings are split
+# into groups like this:
+# 
+# Here is a setting template:
+#   General Group:
+#     Setting Title:
+#       type:            string (default) / text / file / link
+#       description:     setting one sentence description
+#       default_value:   default value is used when setting value is blank
+#
+# Type details: 
+#   Link setting value expected to be in a format of: (link title) http://link.url
+#
+# ================================================================================
+
+
+Главная:
+  Текст на главной:
+    type: text
+    description: Краткое описание под заголовком
+    default_value: 'Бытовки, блок-контейнеры, посты охраны и бани из экологически чистых материалов в Санкт-Петербурге и Ленинградской области.'
+
+О компании:
+  Кратко о компании:
+    type: text
+    description: Краткое описание под заголовком
+    default_value: 'Наша компания “Монпарнас” является лидером по продаже бытовок.'
+  Текст о компании:
+    type: html
+    description: Может содержать картинки и различное форматирование
+
+
+Доставка:
+  Кратко о доставке:
+    type: text
+    description: Краткое описание под заголовком
+    default_value: 'Мы осуществляем доставку по Санкт-Петербургу и Ленинградской области.'
+  Текст о доставке:
+    type: html
+    description: Может содержать картинки и различное форматирование
+
+Контакты:
+  Телефон:
+    default_value: '9851564'
+  Email:
+    default_value: 'info@monparnas.ru'
+  Адрес:
+    type: text
+    default_value: '198328, г Санкт-Петербург, ул Рихарда Зорге, д 16, корп А, офис 1-Н'
+  Часы работы:
+    default_value: 'ежедневно с 9.00 до 18.00'
+
+Общие настройки:
+  Название сайта:
+    default_value: 'Монпарнас РСК - бытовки в Санкт-Петербурге'
+    description: Будет отображаться рядом с фавиконкой
+  Описание сайта:
+    type: text
+    description: Для индексации в поисковых системах
+  Ключевые слова:
+    type: text
+    description: Для индексации в поисковых системах (через запятую). К ним автоматически будут добавлены названия всех товаров
+
+

@@ -1,0 +1,35 @@
+h1 = @order
+h2 Заказчик
+table cellpadding=10 border=1 style="border-collapse: collapse;"
+  tr
+    td: strong Имя
+    td = @order.customer
+  tr
+    td: strong Телефон
+    td = @order.customer.phone
+  - if @order.customer.email.present?
+    tr
+      td: strong E-mail
+      td = @order.customer.email
+  - if @order.customer.comment.present?
+    tr
+      td valign="top": strong Комментарий
+      td style="max-width: 500px" = @order.customer.comment
+
+h2 Детали заказа
+table cellpadding=10 border=1 style="border-collapse: collapse;"
+  tr
+    td: strong = @order.product
+    td = @order.product.decorate.price
+
+  - @order.options.each do |option|
+    tr
+      td: strong = option
+      td = option.decorate.price
+
+  tr
+    td: strong Колличество
+    td = @order.quantity
+  tr
+    td colspan=2
+      h2 Итого: #{@order.decorate.price}

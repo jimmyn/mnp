@@ -1,0 +1,27 @@
+form{
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea{
+    width: 100%;
+    padding: 12px 15px;
+    outline: 0;
+    border: 1px solid $green;
+    font-size: 14px;
+  }
+  textarea{
+    resize: none;
+  }
+  .input{
+    margin-bottom: 20px;
+  }
+  .field_with_errors{
+    textarea, input{
+      border: 1px solid #f43421 + 30;
+    }
+    span.error{
+      color: #f43421;
+      font-size: 12px;
+    }
+  }
+}
